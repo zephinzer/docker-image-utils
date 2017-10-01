@@ -8,7 +8,7 @@ Check out the following repositories under the `./scripts` sub-directory to unde
 
 - [`docker-image-alpine-node`](https://github.com/zephinzer/docker-image-alpine-node)
     - [Docker Hub Repository](https://hub.docker.com/r/zephinzer/alpine-node)
-- `docker-image-alpine-node-gitbook`
+- [`docker-image-alpine-node-gitbook`](https://github.com/zephinzer/docker-image-alpine-node-gitbook)
     - [Docker Hub Repository](https://hub.docker.com/r/zephinzer/alpine-node-gitbook)
 
 ## Usage
