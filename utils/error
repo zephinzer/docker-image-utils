@@ -1,0 +1,5 @@
+#!/bin/bash
+MESSAGE=$1;
+
+printf "\n\033[31m[ERR] ${MESSAGE}\033[0m\n\n";
+exit 0;

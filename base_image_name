@@ -1,0 +1,31 @@
+#!/bin/bash
+#-------------------------------------------------------------------------------------
+# This script retrieves the base image name which we should pull from.
+#-------------------------------------------------------------------------------------
+
+## template
+CURR_DIR=$(dirname $0);
+PROJ_DIR=${CURR_DIR}/../..;
+CONF_DIR=${PROJ_DIR}/conf.d;
+SETUP_DIR=${PROJ_DIR}/.setup;
+${CURR_DIR}/utils/directories_exist;
+if [[ $? != '0' ]]; then exit 1; fi;
+
+## arguments
+BASE_IMAGE_NAME=$1;
+if [[ ${BASE_IMAGE_NAME} = ""]]; then
+  ${CURR_DIR}/utils/error "A default BASE_IMAGE_NAME is required. Specify it as the first argument.";
+  exit 1;
+fi;
+
+## constants
+KEY='BASE_IMAGE_NAME';
+CONF_FILE_PATH="${CONF_DIR}/${KEY}";
+OUTPUT_FILE="${SETUP_DIR}/${KEY}";
+
+## processing
+_=$(stat "${CONF_FILE_PATH}" &>/dev/null);
+if [[ $? = "0" ]]; then BASE_IMAGE_NAME="$(cat "${CONF_FILE_PATH}")"; fi;
+
+## output
+printf "${BASE_IMAGE_TAG}" > "${OUTPUT_FILE}" | cat;

@@ -1,0 +1,14 @@
+#!/bin/bash
+CURR_DIR=$(dirname $0);
+PROJ_DIR=${CURR_DIR}/../../..;
+CONF_DIR=${PROJ_DIR}/conf.d;
+SETUP_DIR=${PROJ_DIR}/.setup;
+
+if [[ $(${UTILS}/exists "${CONF_DIR}") != '0' ]]; then
+  ${CURR_DIR}/error "Configuration directory at ${CONF_DIR} could not be found.";
+  exit 1;
+fi;
+if [[ $(${UTILS}/exists "${SETUP_DIR}") != '0' ]]; then
+  ${UTILS}/error "Setup directory at ${SETUP_DIR} could not be found.";
+  exit 1;
+fi;
