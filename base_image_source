@@ -13,7 +13,7 @@ if [[ $? != '0' ]]; then exit 1; fi;
 
 ## arguments
 BASE_IMAGE_SOURCE=$1;
-if [[ ${BASE_IMAGE_SOURCE} = ""]]; then
+if [[ ${BASE_IMAGE_SOURCE} = "" ]]; then
   ${CURR_DIR}/utils/error "A default BASE_IMAGE_SOURCE is required. Specify it as the first argument.";
   exit 1;
 fi;
@@ -28,4 +28,5 @@ _=$(stat "${CONF_FILE_PATH}" &>/dev/null);
 if [[ $? = "0" ]]; then BASE_IMAGE_SOURCE="$(cat "${CONF_FILE_PATH}")"; fi;
 
 ## output
-printf "${BASE_IMAGE_SOURCE}" > "${OUTPUT_FILE}" | cat;
+printf "${BASE_IMAGE_SOURCE}" > "${OUTPUT_FILE}";
+printf "${BASE_IMAGE_SOURCE}";

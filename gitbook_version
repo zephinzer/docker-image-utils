@@ -36,4 +36,5 @@ else
 fi;
 
 ## output
-printf "${GITBOOK_VERSION}" > "${OUTPUT_FILE}" | cat;
+printf "${GITBOOK_VERSION}" > "${OUTPUT_FILE}";
+printf "${GITBOOK_VERSION}";

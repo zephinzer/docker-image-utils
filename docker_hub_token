@@ -36,4 +36,5 @@ if [[ ${DOCKER_HUB_TOKEN} = '0' ]]; then
 fi;
 
 ## output
-printf "${DOCKER_HUB_TOKEN}" > "${OUTPUT_FILE}" | cat;
+printf "${DOCKER_HUB_TOKEN}" > "${OUTPUT_FILE}";
+printf "${DOCKER_HUB_TOKEN}";

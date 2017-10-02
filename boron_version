@@ -34,4 +34,5 @@ else
 fi;
 
 ## output
-printf "${BORON_VERSION}" > "${OUTPUT_FILE}" | cat;
+printf "${BORON_VERSION}" > "${OUTPUT_FILE}";
+printf "${BORON_VERSION}";

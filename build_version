@@ -17,6 +17,11 @@ OUTPUT_FILE="${SETUP_DIR}/${KEY}";
 
 ## processing
 BUILD_VERSION=$(${CURR_DIR}/../versioning/get-next -i -q);
+if [[ ${BUILD_VERSION} = "" ]]; then
+  ${CURR_DIR}/../versioning/init -q;
+  BUILD_VERSION=$(${CURR_DIR}/../versioning/get-latest -q);
+fi;
 
 ## output
-printf "${BUILD_VERSION}" > "${OUTPUT_FILE}" | cat;
+printf "${BUILD_VERSION}" > "${OUTPUT_FILE}";
+printf "${BUILD_VERSION}";

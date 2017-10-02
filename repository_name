@@ -13,7 +13,7 @@ if [[ $? != '0' ]]; then exit 1; fi;
 
 ## arguments
 REPOSITORY_NAME=$1;
-if [[ ${REPOSITORY_NAME} = ""]]; then
+if [[ ${REPOSITORY_NAME} = "" ]]; then
   ${CURR_DIR}/utils/error "A default REPOSITORY_NAME is required. Specify it as the first argument.";
   exit 1;
 fi;
@@ -28,4 +28,5 @@ __exists=$(stat "${CONF_FILE_PATH}" &>/dev/null);
 if [[ $? = "0" ]]; then REPOSITORY_NAME=$(cat "${CONF_FILE_PATH}"); fi;
 
 ## output
-printf "${REPOSITORY_NAME}" > "${OUTPUT_FILE}" | cat;
+printf "${REPOSITORY_NAME}" > "${OUTPUT_FILE}";
+printf "${REPOSITORY_NAME}";

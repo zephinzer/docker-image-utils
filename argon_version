@@ -13,7 +13,7 @@ if [[ $? != '0' ]]; then exit 1; fi;
 
 ## arguments
 ARGON_VERSION=$1;
-if [[ ${ARGON_VERSION} = ""]]; then ARGON_VERSION='v4.8.4'; fi;
+if [[ ${ARGON_VERSION} = "" ]]; then ARGON_VERSION='v4.8.4'; fi;
 
 ## constants
 KEY='ARGON_VERSION'
@@ -34,4 +34,5 @@ else
 fi;
 
 ## output
-printf "${ARGON_VERSION}" > "${OUTPUT_FILE}" | cat;
+printf "${ARGON_VERSION}" > "${OUTPUT_FILE}";
+printf "${ARGON_VERSION}";

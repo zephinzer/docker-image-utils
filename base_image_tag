@@ -13,7 +13,7 @@ if [[ $? != '0' ]]; then exit 1; fi;
 
 ## arguments
 BASE_IMAGE_TAG=$1;
-if [[ ${BASE_IMAGE_TAG} = ""]]; then
+if [[ ${BASE_IMAGE_TAG} = "" ]]; then
   ${CURR_DIR}/utils/error "A default BASE_IMAGE_TAG is required. Specify it as the first argument.";
   exit 1;
 fi;
@@ -28,4 +28,5 @@ __exists=$(stat ${CONF_FILE_PATH} &>/dev/null);
 if [[ $? = "0" ]]; then BASE_IMAGE_TAG=$(cat ${CONF_FILE_PATH}); fi;
 
 ## output
-printf "${BASE_IMAGE_TAG}" > "${OUTPUT_FILE}" | cat;
+printf "${BASE_IMAGE_TAG}" > "${OUTPUT_FILE}";
+printf "${BASE_IMAGE_TAG}";

@@ -34,4 +34,5 @@ else
 fi;
 
 ## output
-printf "${CARBON_VERSION}" > "${OUTPUT_FILE}" | cat;
+printf "${CARBON_VERSION}" > "${OUTPUT_FILE}";
+printf "${CARBON_VERSION}";

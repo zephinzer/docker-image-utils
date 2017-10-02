@@ -33,4 +33,5 @@ else
 fi;
 
 ## output
-printf "${YARN_VERSION}" > "${OUTPUT_FILE}" | cat;
+printf "${YARN_VERSION}" > "${OUTPUT_FILE}";
+printf "${YARN_VERSION}";

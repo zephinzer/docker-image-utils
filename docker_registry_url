@@ -34,4 +34,5 @@ else
 fi;
 
 ## output
-printf "${DOCKER_REGISTRY_URL}" > "${OUTPUT_FILE}" | cat;
+printf "${DOCKER_REGISTRY_URL}" > "${OUTPUT_FILE}";
+printf "${DOCKER_REGISTRY_URL}";
