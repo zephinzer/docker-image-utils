@@ -21,7 +21,7 @@ LATEST_URL="https://yarnpkg.com/latest.tar.gz";
 OUTPUT_FILE="${SETUP_DIR}/${KEY}";
 
 ## processing
-__exists=$(stat ${CONF_FILE_PATH} &>/dev/null);
+_=$(stat ${CONF_FILE_PATH} &>/dev/null);
 if [[ $? = "0" ]]; then
   YARN_VERSION=$(cat ${CONF_FILE_PATH});
 else

@@ -24,7 +24,7 @@ CONF_FILE_PATH="${CONF_DIR}/${KEY}";
 OUTPUT_FILE="${SETUP_DIR}/${KEY}";
 
 ## processing
-__exists=$(stat "${CONF_FILE_PATH}" &>/dev/null);
+_=$(stat "${CONF_FILE_PATH}" &>/dev/null);
 if [[ $? = "0" ]]; then REPOSITORY_NAME=$(cat "${CONF_FILE_PATH}"); fi;
 
 ## output
