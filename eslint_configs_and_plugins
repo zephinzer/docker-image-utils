@@ -1,0 +1,55 @@
+#!/bin/bash
+#-------------------------------------------------------------------------------------
+# This script parses through all the eslint configs and plugins installed and outputs
+# them as rows with each row representing the npm package name of one extension
+#-------------------------------------------------------------------------------------
+
+## template
+CURR_DIR=$(dirname $0);
+PROJ_DIR=${CURR_DIR}/../..;
+CONF_DIR=${PROJ_DIR}/conf.d;
+SETUP_DIR=${PROJ_DIR}/.setup;
+${CURR_DIR}/utils/directories_exist;
+if [[ $? != '0' ]]; then exit 1; fi;
+
+## arguments
+ESLINT_CONFIGS_AND_PLUGINS=$1;
+if [[ ${ESLINT_CONFIGS_AND_PLUGINS} = "" ]]; then
+  ESLINT_CONFIGS_AND_PLUGINS="\
+  eslint-config-airbnb \
+  eslint-config-canonical \
+  eslint-config-fbjs \
+  eslint-config-google \
+  eslint-config-standard \
+  eslint-config-xo \
+  eslint-plugin-angular \
+  eslint-plugin-babel \
+  eslint-plugin-flowtype \
+  eslint-plugin-jsx-a11y \
+  eslint-plugin-import \
+  eslint-plugin-node \
+  eslint-plugin-promise \
+  eslint-plugin-react \
+  eslint-plugin-relay \
+  eslint-plugin-shopify \
+  eslint-plugin-security \
+  eslint-plugin-standard \
+  eslint-config-supermind \
+  babel-eslint \
+";
+fi;
+
+## constants
+KEY='ESLINT_CONFIGS_AND_PLUGINS';
+CONF_FILE_PATH="${CONF_DIR}/${KEY}";
+OUTPUT_FILE="${SETUP_DIR}/${KEY}";
+
+## processing
+_=$(stat "${CONF_FILE_PATH}" &>/dev/null);
+if [[ $? = "0" ]]; then
+  ESLINT_CONFIGS_AND_PLUGINS=$(cat "${CONF_FILE_PATH}");
+fi;
+
+## output
+printf "${ESLINT_CONFIGS_AND_PLUGINS}" > "${OUTPUT_FILE}";
+printf "${ESLINT_CONFIGS_AND_PLUGINS}";
