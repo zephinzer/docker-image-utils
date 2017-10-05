@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#LOADER='-−=≡≣⪓≣≡=−';
+LOADER='¸∙′´′‛∙˛';
+LOADER_LENGTH=${#LOADER};
+
+while sleep 0.1; do
+  printf " %s\b\b" "${LOADER:i++%LOADER_LENGTH:1}";
+done;
