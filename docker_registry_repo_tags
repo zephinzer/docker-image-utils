@@ -1,6 +1,11 @@
 #!/bin/bash
 #-------------------------------------------------------------------------------------
 # This script retrieves the tags of a given Docker repository.
+#
+# Usage:
+#   docker_registry_repo_tags <repository_name> <api_version>
+#     repository_name : username/project_name
+#     api_version : {v1,v2}
 #-------------------------------------------------------------------------------------
 
 ## template
@@ -30,6 +35,9 @@ fi;
 ## constants
 KEY='DOCKER_REGISTRY_REPO_TAGS';
 DOCKER_REGISTRY_URL="$(${CURR_DIR}/docker_registry_url ${DOCKER_API_VERSION})";
+if [[ ${DOCKER_REGISTRY_URL} = '' ]]; then
+  DOCKER_REGISTRY_URL="$(${CURR_DIR}/docker_registry_url ${DOCKER_API_VERSION} official)";
+fi;
 OUTPUT_FILE="${SETUP_DIR}/${KEY}";
 
 ## processing
