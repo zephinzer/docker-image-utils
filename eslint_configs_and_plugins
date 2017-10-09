@@ -21,20 +21,23 @@ if [[ ${ESLINT_CONFIGS_AND_PLUGINS} = "" ]]; then
   eslint-config-fbjs \
   eslint-config-google \
   eslint-config-standard \
+  eslint-config-supermind \
   eslint-config-xo \
+  eslint-import-resolver-babel-root-import \
   eslint-plugin-angular \
   eslint-plugin-babel \
   eslint-plugin-flowtype \
   eslint-plugin-jsx-a11y \
   eslint-plugin-import \
+  eslint-plugin-no-unsafe-innerhtml \
   eslint-plugin-node \
   eslint-plugin-promise \
   eslint-plugin-react \
   eslint-plugin-relay \
+  eslint-plugin-scanjs-rules@0.1.5 \
   eslint-plugin-shopify \
   eslint-plugin-security \
   eslint-plugin-standard \
-  eslint-config-supermind \
   babel-eslint \
 ";
 fi;
